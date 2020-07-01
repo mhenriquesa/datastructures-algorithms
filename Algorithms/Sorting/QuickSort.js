@@ -4,17 +4,31 @@ function swap(array, i, j) {
   array[j] = temp;
 }
 
-function findIndexPivot(array) {
-  let pivotIndex = 0;
+function firstElemAtRightSpot(array, start = 0, end = array.length - 1) {
+  //take the first element and move the numbers less than to left and
+  // all numbers greater than move to right
+  let pivot = array[start];
+  let swapIndex = start;
 
-  for (let marker = 1; marker < array.length; marker++) {
-    if (array[0] > array[marker]) {
-      pivotIndex++;
-      swap(array, pivotIndex, marker);
+  for (let i = start + 1; i <= end; i++) {
+    if (pivot > array[i]) {
+      swapIndex++;
+      swap(array, swapIndex, i);
     }
   }
-  swap(array, 0, pivotIndex);
-  return pivotIndex;
+  swap(array, start, swapIndex);
+  console.log(array);
+  return swapIndex;
 }
 
-console.log(findIndexPivot([10, 5, 1, 8]));
+function quickSort(anArray, left = 0, right = anArray.length - 1) {
+  if (left < right) {
+    let pivotIndex = firstElemAtRightSpot(anArray, left, right);
+    console.log(pivotIndex);
+    quickSort(anArray, left, pivotIndex - 1);
+    quickSort(anArray, pivotIndex + 1, right);
+  }
+  return anArray;
+}
+console.log(firstElemAtRightSpot([7, 0, 10, 5, 1, 8]));
+console.log(quickSort([7, 0, 10, 5, 1, 8]));
