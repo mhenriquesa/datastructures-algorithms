@@ -1,4 +1,4 @@
-class Node {
+class SingleNode {
   constructor(value) {
     (this.value = value), (this.next = null);
   }
@@ -11,11 +11,11 @@ class LinkedList {
     this.lenght = 1;
   }
   append(value) {
-    const node = new Node(value);
+    const node = new SingleNode(value);
     (this.tail.next = node), (this.tail = node), this.lenght++;
   }
   prepend(value) {
-    const node = new Node(value);
+    const node = new SingleNode(value);
     (node.next = this.head), (this.head = node), this.lenght++;
   }
   showMyList() {
@@ -38,12 +38,12 @@ class LinkedList {
   }
   insert(index, value) {
     let previousElement = this.findMeByIndex(index - 1);
-    let elementPointer = previousElement.next;
+    let currentElementPointer = previousElement.next;
 
-    let newNode = new Node(value);
+    let newNode = new SingleNode(value);
 
     previousElement.next = newNode;
-    newNode.next = elementPointer;
+    newNode.next = currentElementPointer;
     this.lenght++;
   }
   removeHead() {

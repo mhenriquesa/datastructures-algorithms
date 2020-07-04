@@ -17,4 +17,4 @@ function elementoEmProp(arr1, arr2) {
   return false;
 }
 
-console.log(elementoEmProp(arr1, arr2));
+console.log(elementoEmProp([2, 4, 5, 5], [3, 'f', 3, 'f', 2])); // returns true

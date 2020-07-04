@@ -9,11 +9,6 @@
 //   reverseInt(-90) === -9
 
 function reverseInt(n) {
-  let x = parseInt(n.toString().split('').reverse().join(''));
-  return n < 0 ? (x *= -1) : x;
-}
-
-function reverseInt1(n) {
-  let x = n.toString().split('').reverse().join('');
-  return parseInt(x) * Math.sign(n);
+  let reversedNumber = n.toString().split('').reverse().join('');
+  return parseInt(reversedNumber) * Math.sign(n);
 }

@@ -10,9 +10,7 @@ function maxChar(str) {
   let max = 0;
   let maxChar = '';
 
-  for (const char of str) {
-    map[char] = map[char] + 1 || 1;
-  }
+  for (const char of str) map[char] = map[char] + 1 || 1;
 
   for (const key in map) {
     if (map[key] > max) {

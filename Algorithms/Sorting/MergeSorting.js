@@ -27,6 +27,7 @@ const mergeSortedArrays = (sortedArray1, sortedArray2) => {
 };
 
 const mergeSorting = anArray => {
+  debugger;
   //take 2 arrays with lenght=1 and call mergeSortedArrays
   if (anArray.length <= 1) return anArray;
   let midpoint = Math.floor(anArray.length / 2);
@@ -38,4 +39,4 @@ const mergeSorting = anArray => {
 
 // mergeSortedArrays vai apenas por em ordem os 2 arrays de lenght 1
 
-console.log(mergeSorting([1, 3, 0, 4, 2, 7, 9, 12, 53, 33, 22]));
+console.log(mergeSorting([1, 3, 0, 4]));

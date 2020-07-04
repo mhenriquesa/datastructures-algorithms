@@ -17,6 +17,7 @@ function reverse(str) {
   return result.join('');
 }
 
+//-------------------------------
 function reverse2(str) {
   let reversed = '';
 
@@ -24,8 +25,7 @@ function reverse2(str) {
   return reversed;
 }
 
+//------------------------------
 function reverseUsingReduce(str) {
   return str.split('').reduce((reversed, char) => char + reversed, '');
 }
-
-console.log(reverseUsingReduce('reversing'));
